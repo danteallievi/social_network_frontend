@@ -1,6 +1,6 @@
 import socialActionTypes from "../actions/socialActionTypes";
 
-const userReducer = (social = [], action) => {
+const socialReducer = (social = [], action) => {
   let newSocialState;
 
   switch (action.type) {
@@ -16,4 +16,4 @@ const userReducer = (social = [], action) => {
   return newSocialState;
 };
 
-export default userReducer;
+export default socialReducer;
