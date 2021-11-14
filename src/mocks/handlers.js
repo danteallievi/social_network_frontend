@@ -6,7 +6,7 @@ const users = [
   {
     name: "Test",
     username: "Test",
-    password: "$2b$10$T7eg5rYPr4RSMbuxD4Ao.OnDK2B1Pv2EBSmTMjPBmJlaaaN7V9Moq",
+    password: "pass",
     friends: [],
     enemies: [],
     age: 18,
@@ -17,7 +17,7 @@ const users = [
   {
     name: "Test1",
     username: "Test1",
-    password: "$2b$10$T7eg5rYPr4RSMbuxD4Ao.OnDK2B1Pv2EBSmTMjPBmJlaaaN7V9Moq",
+    password: "pass`",
     friends: [],
     enemies: [],
     age: 18,
