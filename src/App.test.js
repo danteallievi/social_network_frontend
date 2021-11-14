@@ -1,11 +1,6 @@
-import {
-  render,
-  screen,
-  waitForElementToBeRemoved,
-} from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
-import jwtDecode from "jwt-decode";
 import configureStore from "./redux/store/index";
 
 import { server } from "./mocks/server";
