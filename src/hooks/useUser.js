@@ -26,7 +26,6 @@ const useUser = () => {
     const userIsLogged = JSON.parse(localStorage.getItem("user"));
 
     if (userIsLogged) {
-      console.log("LOGED!!!!!!!!!");
       const userData = jwtDecode(userIsLogged.token);
       dispatch(userIsLoggedAction(userData));
     }
