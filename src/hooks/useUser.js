@@ -13,8 +13,8 @@ const useUser = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((store) => store);
 
-  const loginUser = (user) => {
-    dispatch(loginThunk(user));
+  const loginUser = (receivedUser) => {
+    dispatch(loginThunk(receivedUser));
   };
 
   const logoutUser = () => {
@@ -23,10 +23,10 @@ const useUser = () => {
   };
 
   const userIsLogged = useCallback(() => {
-    const userIsLogged = JSON.parse(localStorage.getItem("user"));
+    const checkUserLogged = JSON.parse(localStorage.getItem("user"));
 
-    if (userIsLogged) {
-      const userData = jwtDecode(userIsLogged.token);
+    if (checkUserLogged) {
+      const userData = jwtDecode(checkUserLogged.token);
       dispatch(userIsLoggedAction(userData));
     }
   }, [dispatch]);

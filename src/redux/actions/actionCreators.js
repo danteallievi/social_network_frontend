@@ -1,15 +1,15 @@
-import authActionsTypes from "./authActionsTypes";
+import authActionTypes from "./authActionTypes";
 
 export const userLoginAction = (user) => ({
-  type: authActionsTypes.loginUser,
+  type: authActionTypes.loginUser,
   user,
 });
 
 export const userLogoutAction = () => ({
-  type: authActionsTypes.logoutUser,
+  type: authActionTypes.logoutUser,
 });
 
 export const userIsLoggedAction = (user) => ({
-  type: authActionsTypes.userIsLogged,
+  type: authActionTypes.userIsLogged,
   user,
 });
