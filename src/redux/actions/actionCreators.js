@@ -8,3 +8,8 @@ export const userLoginAction = (user) => ({
 export const userLogoutAction = () => ({
   type: authActionsTypes.logoutUser,
 });
+
+export const userIsLoggedAction = (user) => ({
+  type: authActionsTypes.userIsLogged,
+  user,
+});
