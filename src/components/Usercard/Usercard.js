@@ -1,9 +1,6 @@
 const Usercard = ({ id, name, age, image }) => {
   return (
-    <div
-      key={id}
-      className="shadow-lg bg-white rounded overflow-hidden flex flex-col justify-center items-center"
-    >
+    <div className="shadow-lg bg-white rounded overflow-hidden flex flex-col justify-center items-center">
       <img src={image} alt={name} className="w-full" />
       <div className="font-bold text-xl mb-2">{name}</div>
       <p className="text-gray-700 text-base">{age} years old</p>

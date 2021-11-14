@@ -76,6 +76,7 @@ describe("Given a App component", () => {
         userEvent.type(usernameForm, "toto");
         userEvent.type(passwordForm, "toto");
         userEvent.click(buttonSubmit);
+
         const homeText = await screen.findByRole("heading", { name: /home/i });
 
         expect(homeText).toBeInTheDocument();
