@@ -27,9 +27,10 @@ function App() {
               </PrivateRoute>
             }
           />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/register" exact element={<RegisterPage />} />
+          <Route path="/login" exact element={<LoginPage />} />
           <Route
+            exact
             path="/home"
             element={
               <PrivateRoute>
