@@ -1,8 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
+
 import useUser from "../../../hooks/useUser";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
   const { loginUser } = useUser();
+
   const initialValue = {
     username: "",
     password: "",
@@ -19,6 +23,7 @@ const LoginForm = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     loginUser(inputValue);
+    navigate("/home");
   };
 
   return (
