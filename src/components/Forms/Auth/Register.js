@@ -30,19 +30,36 @@ const Register = () => {
 
   return (
     <>
-      <form onSubmit={onSubmit} autoComplete="off" noValidate>
+      <form
+        onSubmit={onSubmit}
+        autoComplete="off"
+        noValidate
+        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+      >
         <div>
-          <label htmlFor="username">Name</label>
+          <label
+            htmlFor="username"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
+            Name
+          </label>
           <input
             type="text"
             id="name"
             placeholder="Name"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             value={inputValue.name}
             onChange={handleChange}
           />
-          <label htmlFor="username">Username</label>
+          <label
+            htmlFor="username"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
+            Username
+          </label>
           <input
             type="text"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="username"
             placeholder="Username"
             value={inputValue.username}
@@ -50,28 +67,42 @@ const Register = () => {
           />
         </div>
         <div>
-          <label htmlFor="password">Password</label>
+          <label
+            htmlFor="password"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
+            Password
+          </label>
           <input
             autoComplete="off"
             value={inputValue.password}
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             type="password"
             id="password"
             onChange={handleChange}
             placeholder="Password"
           />
 
-          <label htmlFor="password">Age</label>
+          <label
+            htmlFor="password"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
+            Age
+          </label>
           <input
             autoComplete="off"
             value={inputValue.age}
             type="number"
             id="age"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             onChange={handleChange}
             placeholder="Age"
           />
         </div>
         <div>
-          <button>Sign in</button>
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-4">
+            Sign in
+          </button>
         </div>
       </form>
     </>
