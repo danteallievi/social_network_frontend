@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 
+import { userLogoutAction } from "../redux/actions/actionCreators";
 import { loginThunk } from "../redux/thunk/userThunk";
 
 const useUser = () => {
@@ -10,9 +11,15 @@ const useUser = () => {
     dispatch(loginThunk(user));
   };
 
+  const logoutUser = () => {
+    localStorage.removeItem("user");
+    dispatch(userLogoutAction());
+  };
+
   return {
     user,
     loginUser,
+    logoutUser,
   };
 };
 
