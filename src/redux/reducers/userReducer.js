@@ -31,6 +31,13 @@ const userReducer = (
       };
       break;
 
+    case authActionTypes.registerUser:
+      newUserState = {
+        isAuthenticated: true,
+        user: action.user,
+      };
+      break;
+
     default:
       newUserState = user;
       break;

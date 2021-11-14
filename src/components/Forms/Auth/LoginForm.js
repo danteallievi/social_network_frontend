@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, Link } from "react-router-dom";
 
 import useUser from "../../../hooks/useUser";
 
@@ -27,32 +27,35 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={onSubmit} autoComplete="off" noValidate>
-      <div>
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          id="username"
-          placeholder="Username"
-          value={inputValue.username}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <input
-          autoComplete="off"
-          value={inputValue.password}
-          type="password"
-          id="password"
-          onChange={handleChange}
-          placeholder="Password"
-        />
-      </div>
-      <div>
-        <button>Log in</button>
-      </div>
-    </form>
+    <>
+      <form onSubmit={onSubmit} autoComplete="off" noValidate>
+        <div>
+          <label htmlFor="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            placeholder="Username"
+            value={inputValue.username}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="password">Password</label>
+          <input
+            autoComplete="off"
+            value={inputValue.password}
+            type="password"
+            id="password"
+            onChange={handleChange}
+            placeholder="Password"
+          />
+        </div>
+        <div>
+          <button>Log in</button>
+        </div>
+      </form>
+      <Link to="/register">Sing in if you dont have account</Link>
+    </>
   );
 };
 

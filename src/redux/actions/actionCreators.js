@@ -13,3 +13,8 @@ export const userIsLoggedAction = (user) => ({
   type: authActionTypes.userIsLogged,
   user,
 });
+
+export const registerUserAction = (user) => ({
+  type: authActionTypes.registerUser,
+  user,
+});

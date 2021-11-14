@@ -7,7 +7,7 @@ import {
   userIsLoggedAction,
 } from "../redux/actions/actionCreators";
 
-import { loginThunk } from "../redux/thunk/userThunk";
+import { loginThunk, registerUserThunk } from "../redux/thunk/userThunk";
 
 const useUser = () => {
   const dispatch = useDispatch();
@@ -15,6 +15,10 @@ const useUser = () => {
 
   const loginUser = (receivedUser) => {
     dispatch(loginThunk(receivedUser));
+  };
+
+  const registerUser = (receivedUser) => {
+    dispatch(registerUserThunk(receivedUser));
   };
 
   const logoutUser = () => {
@@ -34,6 +38,7 @@ const useUser = () => {
   return {
     user,
     loginUser,
+    registerUser,
     logoutUser,
     userIsLogged,
   };
