@@ -5,6 +5,7 @@ import useUser from "./hooks/useUser";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import PrivateRoute from "./utils/PrivateRoute";
+import RegisterPage from "./pages/RegisterPage/RegisterPage";
 
 function App() {
   const { userIsLogged } = useUser();
@@ -28,6 +29,7 @@ function App() {
           />
 
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
           <Route
             path="/home"
             element={
