@@ -16,6 +16,7 @@ const HomePage = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-10">
         {social.map((user) => (
           <Usercard
+            key={user.id}
             id={user.id}
             name={user.name}
             image={user.image}
