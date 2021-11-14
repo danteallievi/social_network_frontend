@@ -11,7 +11,14 @@ const Logout = () => {
     navigate("/login");
   };
 
-  return <button onClick={handleClick}>Log out</button>;
+  return (
+    <button
+      className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+      onClick={handleClick}
+    >
+      Log out
+    </button>
+  );
 };
 
 export default Logout;
