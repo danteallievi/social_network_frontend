@@ -1,4 +1,4 @@
-import authActionsTypes from "../actions/authActionsTypes";
+import authActionTypes from "../actions/authActionTypes";
 
 const userReducer = (
   user = {
@@ -10,21 +10,21 @@ const userReducer = (
   let newUserState;
 
   switch (action.type) {
-    case authActionsTypes.userIsLogged:
+    case authActionTypes.userIsLogged:
       newUserState = {
         isAuthenticated: true,
         user: action.user,
       };
       break;
 
-    case authActionsTypes.loginUser:
+    case authActionTypes.loginUser:
       newUserState = {
         isAuthenticated: true,
         user: action.user,
       };
       break;
 
-    case authActionsTypes.logoutUser:
+    case authActionTypes.logoutUser:
       newUserState = {
         isAuthenticated: false,
         user: {},
