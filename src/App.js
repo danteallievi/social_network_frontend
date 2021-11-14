@@ -27,7 +27,6 @@ function App() {
               </PrivateRoute>
             }
           />
-
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route
@@ -38,7 +37,6 @@ function App() {
               </PrivateRoute>
             }
           />
-
           <Route path="*" element={<h1>Not found</h1>} />
         </Routes>
       </Router>
