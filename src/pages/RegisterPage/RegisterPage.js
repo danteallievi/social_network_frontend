@@ -10,7 +10,8 @@ const RegisterPage = () => {
   ) : (
     <>
       <div className="">
-        <h1>Register</h1>
+        <h1 className="text-4xl">Register</h1>
+
         <Register />
       </div>
     </>
