@@ -1,4 +1,5 @@
 import authActionTypes from "./authActionTypes";
+import socialActionTypes from "./socialActionTypes";
 
 export const userLoginAction = (user) => ({
   type: authActionTypes.loginUser,
@@ -17,4 +18,9 @@ export const userIsLoggedAction = (user) => ({
 export const registerUserAction = (user) => ({
   type: authActionTypes.registerUser,
   user,
+});
+
+export const loadAllUsersAction = (users) => ({
+  type: socialActionTypes.loadAllUsers,
+  users,
 });
