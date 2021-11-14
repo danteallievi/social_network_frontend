@@ -27,13 +27,15 @@ afterAll(() => {
 
 describe("Given a App component", () => {
   describe("When the user is not logged in", () => {
-    test("Then it should render the form to login", async () => {
+    beforeEach(() => {
       const store = configureStore({ user: { isAuthenticated: false } });
       render(
         <Provider store={store}>
           <App />
         </Provider>
       );
+    });
+    test("Then it should render the form to login", async () => {
       const usernameForm = await screen.findByPlaceholderText(/username/i);
       const passwordForm = await screen.findByPlaceholderText(/password/i);
 
@@ -42,14 +44,6 @@ describe("Given a App component", () => {
     });
     describe("And the user fill the form and submits", () => {
       test("Then it should render the home page", async () => {
-        const store = configureStore({
-          user: { isAuthenticated: false },
-        });
-        render(
-          <Provider store={store}>
-            <App />
-          </Provider>
-        );
         const usernameForm = await screen.findByPlaceholderText(/username/i);
         const passwordForm = await screen.findByPlaceholderText(/password/i);
         const buttonSubmit = await screen.findByText(/log in/i);
