@@ -19,7 +19,6 @@ const userReducer = (
 
     case authActionsTypes.loginUser:
       newUserState = {
-        ...user,
         isAuthenticated: true,
         user: action.user,
       };
