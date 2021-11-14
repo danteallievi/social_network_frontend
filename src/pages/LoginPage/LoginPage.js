@@ -9,10 +9,8 @@ const LoginPage = () => {
     <HomePage />
   ) : (
     <>
-      <div className="">
-        <h1>Login</h1>
-        <LoginForm />
-      </div>
+      <h1 className="text-4xl">Login</h1>
+      <LoginForm />
     </>
   );
 };
