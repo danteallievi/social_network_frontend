@@ -14,9 +14,9 @@ export const loginThunk = (user) => async (dispatch) => {
     const response = await axios.post(`${apiUrl}user/login`, user);
     if (response.status === 200) {
       const token = response.data.token;
-      const user = await jwtDecode(token);
+      const userDecodedToken = jwtDecode(token);
       dispatch(userLoginAction(user));
-      localStorage.setItem("user", JSON.stringify({ token: token }));
+      localStorage.setItem("user", JSON.stringify({ token: userDecodedToken }));
     }
   } catch (error) {}
 };
