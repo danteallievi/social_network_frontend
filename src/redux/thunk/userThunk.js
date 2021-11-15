@@ -4,7 +4,6 @@ import { userLoginAction, registerUserAction } from "../actions/actionCreators";
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
-let local;
 export const loginThunk = (user) => async (dispatch) => {
   try {
     const response = await axios.post(`${apiUrl}user/login`, user);
@@ -12,7 +11,7 @@ export const loginThunk = (user) => async (dispatch) => {
       const token = response.data.token;
       const userDecodedToken = jwtDecode(token);
       dispatch(userLoginAction(userDecodedToken));
-      local = localStorage.setItem("user", JSON.stringify({ token: token }));
+      localStorage.setItem("user", JSON.stringify({ token: token }));
     }
   } catch (error) {}
 };
