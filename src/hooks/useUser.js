@@ -7,15 +7,11 @@ import {
   userIsLoggedAction,
 } from "../redux/actions/actionCreators";
 
-import {
-  loginThunk,
-  registerUserThunk,
-  loadAllUsersThunk,
-} from "../redux/thunk/userThunk";
+import { loginThunk, registerUserThunk } from "../redux/thunk/userThunk";
 
 const useUser = () => {
   const dispatch = useDispatch();
-  const { user, social } = useSelector((store) => store);
+  const { user } = useSelector((store) => store);
 
   const loginUser = (receivedUser) => {
     dispatch(loginThunk(receivedUser));
@@ -39,18 +35,12 @@ const useUser = () => {
     }
   }, [dispatch]);
 
-  const loadAllUsers = useCallback(() => {
-    dispatch(loadAllUsersThunk());
-  }, [dispatch]);
-
   return {
     user,
-    social,
     loginUser,
     registerUser,
     logoutUser,
     userIsLogged,
-    loadAllUsers,
   };
 };
 
