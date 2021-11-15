@@ -1,10 +1,6 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
-import {
-  userLoginAction,
-  registerUserAction,
-  loadAllUsersAction,
-} from "../actions/actionCreators";
+import { userLoginAction, registerUserAction } from "../actions/actionCreators";
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -26,18 +22,6 @@ export const registerUserThunk = (user) => async (dispatch) => {
     const response = await axios.post(`${apiUrl}user/register`, user);
     if (response.status === 201) {
       dispatch(registerUserAction(user));
-    }
-  } catch (error) {}
-};
-
-export const loadAllUsersThunk = () => async (dispatch) => {
-  try {
-    local = JSON.parse(localStorage.getItem("user"));
-    const response = await axios.get(`${apiUrl}social`, {
-      headers: { Authorization: `Bearer ${local.token}` },
-    });
-    if (response.status === 200) {
-      dispatch(loadAllUsersAction(response.data));
     }
   } catch (error) {}
 };
