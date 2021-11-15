@@ -4,9 +4,11 @@ import Usercard from "../../components/Usercard/Usercard";
 import useSocial from "../../hooks/useSocial";
 
 const HomePage = () => {
-  const { loadAllUsers, social } = useSocial();
+  const { social, loadAllUsers, addFriend } = useSocial();
 
-  const handleAddToFriend = (id) => {};
+  const handleAddToFriend = (id) => {
+    addFriend(id);
+  };
 
   useEffect(() => {
     loadAllUsers();

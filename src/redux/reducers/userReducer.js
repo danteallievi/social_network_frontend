@@ -1,4 +1,5 @@
 import authActionTypes from "../actions/authActionTypes";
+import socialActionTypes from "../actions/socialActionTypes";
 
 const userReducer = (
   user = {
@@ -35,6 +36,13 @@ const userReducer = (
       newUserState = {
         isAuthenticated: true,
         user: action.user,
+      };
+      break;
+
+    case socialActionTypes.addFriend:
+      newUserState = {
+        isAuthenticated: true,
+        user: { ...user.user, friends: [...user.user.friends, action.id] },
       };
       break;
 
