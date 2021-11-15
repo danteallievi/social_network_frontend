@@ -24,3 +24,8 @@ export const loadAllUsersAction = (users) => ({
   type: socialActionTypes.loadAllUsers,
   users,
 });
+
+export const addFriendAction = (id) => ({
+  type: socialActionTypes.addFriend,
+  id,
+});

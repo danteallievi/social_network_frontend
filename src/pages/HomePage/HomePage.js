@@ -1,10 +1,14 @@
 import { useEffect } from "react";
 import Logout from "../../components/Forms/Auth/Logout";
 import Usercard from "../../components/Usercard/Usercard";
-import useUser from "../../hooks/useUser";
+import useSocial from "../../hooks/useSocial";
 
 const HomePage = () => {
-  const { loadAllUsers, social } = useUser();
+  const { social, loadAllUsers, addFriend } = useSocial();
+
+  const handleAddToFriend = (id) => {
+    addFriend(id);
+  };
 
   useEffect(() => {
     loadAllUsers();
@@ -16,6 +20,7 @@ const HomePage = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-10">
         {social.map((user) => (
           <Usercard
+            handleFriendButton={() => handleAddToFriend(user.id)}
             key={user.id}
             id={user.id}
             name={user.name}
