@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import Logout from "../../components/Forms/Auth/Logout";
 import Usercard from "../../components/Usercard/Usercard";
-import useUser from "../../hooks/useUser";
+import useSocial from "../../hooks/useSocial";
 
 const HomePage = () => {
-  const { loadAllUsers, social } = useUser();
+  const { loadAllUsers, social } = useSocial();
 
   const handleAddToFriend = (id) => {};
 
